@@ -1,0 +1,33 @@
+user@shree-vidya:~$ touch fileS
+user@shree-vidya:~$ touch fileS fileV
+user@shree-vidya:~$ cat>fileS
+HELLO
+^D
+^C
+user@shree-vidya:~$ cp fileS fileR
+user@shree-vidya:~$ mv fileS fileR
+user@shree-vidya:~$ cat>fileR
+HI GUYS^C
+user@shree-vidya:~$ mkdir dir2
+user@shree-vidya:~$ cd dir2
+user@shree-vidya:~/dir2$ ls-alt
+ls-alt: command not found
+user@shree-vidya:~/dir2$ ls -alt
+total 8
+drwxrwxr-x  2 user user 4096 Apr 25 13:30 .
+drwxr-xr-x 25 user user 4096 Apr 25 13:30 ..
+user@shree-vidya:~/dir2$ ls -l
+total 0
+user@shree-vidya:~/dir2$ ls -ltr
+total 0
+user@shree-vidya:~/dir2$ ls -a
+.  ..
+user@shree-vidya:~/dir2$ which -a cat
+/usr/bin/cat
+/bin/cat
+user@shree-vidya:~/dir2$ man cat
+user@shree-vidya:~/dir2$ su user1
+su: user user1 does not exist
+user@shree-vidya:~/dir2$ su user 1
+Password: 
+
