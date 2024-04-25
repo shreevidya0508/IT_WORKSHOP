@@ -1,0 +1,103 @@
+user@shree-vidya:~$ cat >month.txt
+april
+january
+march
+december
+june
+^C
+user@shree-vidya:~$ sort -M month.txt
+january
+march
+april
+june
+december
+user@shree-vidya:~$ cat >numbers.txt
+34
+1
+6
+4
+9
+6
+^C
+user@shree-vidya:~$ sort -n numbers.txt
+1
+4
+
+
+
+
+
+
+6
+6
+9
+34
+user@shree-vidya:~$ sort -u  numbers.txt
+1
+34
+4
+6
+9
+
+
+user@shree-vidya:~$ cat > grepfile.txt
+welcome to ubuntu
+linux and unix are commands
+rgukt is one of greatest university
+this is unix
+^C
+user@shree-vidya:~$ sed '/one/d' grepfile.txt
+welcome to ubuntu
+linux and unix are commands
+this is unix
+
+
+user@shree-vidya:~$ cat > awkfile.txt
+venky storage id 4352
+vinay window id 5636
+manas unix id 6543
+ravi linux id 3234
+shravan ubuntu id 7362
+^C
+user@shree-vidya:~$ awk '{print $1,$3}' awkfile.txt
+venky id
+vinay id
+manas id
+ravi id
+shravan id
+user@shree-vidya:~$ awk '{print $4,$5}' awkfile.txt
+4352 
+5636 
+6543 
+3234 
+7362 
+user@shree-vidya:~$ awk '/manas/{print}' awkfile.txt
+manas unix id 6543
+user@shree-vidya:~$ awk '/manas/{print $4}' awkfile.txt
+6543
+user@shree-vidya:~$ awk '/manas/{print NR,$ 0}' awkfile.txt
+3 manas unix id 6543
+user@shree-vidya:~$ awk '{print NR,$ 0}' awkfile.txt
+1 venky storage id 4352
+2 vinay window id 5636
+3 manas unix id 6543
+4 ravi linux id 3234
+5 shravan ubuntu id 7362
+user@shree-vidya:~$ awk '{print NR}' awkfile.txt
+1
+2
+3
+4
+5
+user@shree-vidya:~$ awk '{print NR,$1}' awkfile.txt
+1 venky
+2 vinay
+3 manas
+4 ravi
+5 shravan
+
+
+shutdown -r +1
+shutdown -reboot
+shutdown -p +5
+
